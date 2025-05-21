@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} - CV</title>
+    <style>
+        html, body {
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
+            padding: 30px;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 15px;
+            background-color: #fff;
+            color: #000;
+            box-sizing: border-box;
+        }
+        .header { border-bottom: 1px solid #999; margin-bottom: 15px; padding-bottom: 5px; }
+        .header h1 { margin: 0; font-size: 21px; color: #000; }
+        h2 { font-size: 17px; margin-top: 20px; border-bottom: 1px solid #ccc; font-weight: bold; }
+        ul { padding-left: 18px; margin: 6px 0 10px 0; }
+        li { margin-bottom: 4px; }
+        p { margin: 4px 0; line-height: 1.4; }
+        a { color: #000; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ name }}</h1>
+        <p>{{ job_title }}</p>
+        <p>{{ email }} | {{ phone }} | {{ address }}</p>
+        {% if linkedin %}<p><strong>LinkedIn:</strong> <a href="{{ linkedin }}" target="_blank">{{ linkedin }}</a></p>{% endif %}
+    </div>
+    <h2>Summary</h2><p>{{ summary }}</p>
+    <h2>Education</h2><p>{{ education }}</p>
+    <h2>Experience</h2>{{ experience|safe }}
+    <h2>Projects</h2>{{ projects|safe }}
+    <h2>Skills</h2>{{ skills|safe }}
+    <h2>Languages</h2>{{ languages|safe }}
+</body>
+</html>

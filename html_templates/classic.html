@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} - CV</title>
+    <style>
+        body { font-family: 'Verdana', sans-serif; margin: 30px; font-size: 15px; background-color: #f7f9fc; color: #333; }
+        .left { float: left; width: 30%; background-color: #2a3f54; color: white; padding: 20px; box-sizing: border-box; }
+        .right { float: right; width: 65%; padding: 20px; box-sizing: border-box; }
+        h1 { font-size: 24px; margin-bottom: 0; }
+        h2 { font-size: 18px; color: #2a3f54; margin-top: 20px; border-bottom: 1px solid #ccc; }
+        .left h2 { color: white; border-bottom: 1px solid #ffffff55; }
+        ul { padding-left: 18px; }
+        li { margin-bottom: 4px; }
+        p { margin: 4px 0; }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h1>{{ name }}</h1>
+        <p><strong>{{ job_title }}</strong></p>
+        <p>{{ address }}</p>
+        <p>{{ phone }}</p>
+        <p>{{ email }}</p>
+        {% if linkedin %}<h2>LinkedIn</h2><p><a href="{{ linkedin }}" style="color:white;">{{ linkedin }}</a></p>{% endif %}
+        <h2>Languages</h2>{{ languages|safe }}
+        <h2>Skills</h2>{{ skills|safe }}
+    </div>
+    <div class="right">
+        <h2>Summary</h2><p>{{ summary }}</p>
+        <h2>Education</h2><p>{{ education }}</p>
+        <h2>Experience</h2>{{ experience|safe }}
+        <h2>Projects</h2>{{ projects|safe }}
+    </div>
+</body>
+</html>
